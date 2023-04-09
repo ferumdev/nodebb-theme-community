@@ -6,27 +6,27 @@
 		<div class="wrapper dropup-center d-flex align-items-center justify-content-between w-100 h-100" style="padding: 5px 0px;">
 			<div class="d-flex">
 				<div class="lh-1 px-2">
-					<i class="fa fa-angles-left pointer fa-fw pagetop fs-5" style="z-index: 1;"></i>
+					<i class="fa fa-angles-left pointer fa-fw pagetop fs-6" style="z-index: 1;"></i>
 				</div>
 				{{{ if config.usePagination }}}
 				<div class="lh-1 px-2">
-					<i class="fa fa-angle-left pointer fa-fw pageprev fs-5" style="z-index: 1;"></i>
+					<i class="fa fa-angle-left pointer fa-fw pageprev fs-6" style="z-index: 1;"></i>
 				</div>
 				{{{ end }}}
 			</div>
 
 			<a href="#" class="text-reset dropdown-toggle d-inline-block px-3 text-decoration-none" data-bs-toggle="dropdown">
-				<span class="d-inline-flex gap-2 align-items-center pagination-text position-relative fw-bold"></span>
+				<span class="d-inline-flex gap-2 align-items-center pagination-text position-relative fw-semibold text-sm"></span>
 			</a>
 
 			<div class="d-flex">
 				{{{ if config.usePagination }}}
 				<div class="lh-1 px-2">
-					<i class="fa fa-angle-right pointer fa-fw pagenext fs-5" style="z-index: 1;"></i>
+					<i class="fa fa-angle-right pointer fa-fw pagenext fs-6" style="z-index: 1;"></i>
 				</div>
 				{{{ end }}}
 				<div class="lh-1 px-2">
-					<i class="fa fa-angles-right pointer fa-fw pagebottom fs-5" style="z-index: 1;"></i>
+					<i class="fa fa-angles-right pointer fa-fw pagebottom fs-6" style="z-index: 1;"></i>
 				</div>
 			</div>
 
