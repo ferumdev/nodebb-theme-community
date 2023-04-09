@@ -19,8 +19,7 @@
 		"../client/account/theme.js": "public/settings.js"
 	},
 	"staticDirs": {
-		"inter": "node_modules/@fontsource/inter/files",
-		"poppins": "node_modules/@fontsource/poppins/files"
+		"nunito": "node_modules/@fontsource/nunito/files"
 	},
 	"languages": "languages"
 }
