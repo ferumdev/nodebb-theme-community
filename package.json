@@ -1,5 +1,5 @@
 {
-  "name": "nodebb-theme-harmony",
+  "name": "nodebb-theme-community",
   "version": "1.0.0-beta.108",
   "nbbpm": {
     "compatibility": "^3.0.0"
@@ -8,7 +8,7 @@
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NodeBB/nodebb-theme-harmony"
+    "url": "https://github.com/ferumdev/nodebb-theme-community"
   },
   "scripts": {
     "lint": "eslint ."
@@ -34,7 +34,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NodeBB/nodebb-theme-harmony/issues"
+    "url": "https://github.com/ferumdev/nodebb-theme-community/issues"
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.14",
