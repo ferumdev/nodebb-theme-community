@@ -1,5 +1,5 @@
 <div class="{{{ if config.theme.stickyToolbar }}}sticky-tools{{{ end }}}">
-	<nav class="navbar navbar-expand my-2 p-0 border-0 rounded topic-main-buttons">
+	<nav class="navbar navbar-expand p-0 border-0 rounded topic-main-buttons">
 		<div class="card card-header flex-row p-2 border rounded w-100 align-items-center">
 			<ul class="navbar-nav me-auto gap-2 align-items-center flex-wrap">
 				{{{ if loggedIn }}}
