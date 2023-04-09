@@ -50,6 +50,15 @@
 					pre {
 						max-height: calc($font-size-base * 24);
 					}
+					
+					.img-fluid {
+						padding: 8px;
+						margin: 8px 0;
+						border: 1px solid var(--bs-border-color);
+						background-color: var(--bs-light);
+						border-radius: var(--bs-border-radius); max-height: 450px;
+					}
+					
 				}
 
 				> [component="post/footer"] {
