@@ -1,7 +1,7 @@
 {
-    "id": "nodebb-theme-harmony",
-    "name": "Harmony",
+    "id": "nodebb-theme-community",
+    "name": "Community",
     "description": "The default theme for NodeBB. Uses a standard approach to forum design.",
-    "url": "https://github.com/nodebb/nodebb-theme-harmony",
+    "url": "https://github.com/ferumdev/nodebb-theme-community",
     "screenshot": "screenshot.png"
 }
