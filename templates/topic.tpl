@@ -15,15 +15,15 @@
 		<span component="topic/labels" class="d-flex gap-2 {{{ if (!scheduled && (!pinned && (!locked && (!oldCid && !icons.length)))) }}}hidden{{{ end }}}">
 			<span component="topic/scheduled" class="badge badge border border-gray-300 text-primary {{{ if !scheduled }}}hidden{{{ end }}}">
 				<i class="fa fa-clock-o"></i>
-				<span class="hidden-xs hidden-sm hidden-md">[[topic:scheduled]]</span>
+				<span class="d-none d-xl-inline">[[topic:scheduled]]</span>
 			</span>
 			<span component="topic/pinned" class="badge badge border border-gray-300 text-primary {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}">
 				<i class="fa fa-thumb-tack"></i>
-				<span class="hidden-xs hidden-sm hidden-md">{{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {pinExpiryISO}]]{{{ end }}}</span>
+				<span class="d-none d-xl-inline">{{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {pinExpiryISO}]]{{{ end }}}</span>
 			</span>
 			<span component="topic/locked" class="badge badge border border-gray-300 text-primary {{{ if !locked }}}hidden{{{ end }}}">
 				<i class="fa fa-lock"></i>
-				<span class="hidden-xs hidden-sm hidden-md">[[topic:locked]]</span>
+				<span class="d-none d-xl-inline">[[topic:locked]]</span>
 			</span>
 			<span class="badge badge border border-gray-300 text-primary {{{ if !oldCid }}}hidden{{{ end }}}">
 				<i class="fa fa-arrow-circle-right"></i>
