@@ -11,13 +11,15 @@
 
 		<div class="d-flex p-0 col-lg-7 gap-2 gap-lg-3 align-items-start">
 			<div class="flex-shrink-0 position-relative">
+				{{{ if ./thumbs.length }}}
+				<a class="position-relative text-decoration-none flex-shrink-0" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">
+				<img class="topic-thumb rounded-1" style="width:auto;height: 3.33rem;" src="{./thumbs.0.url}"/>
+				<span data-numthumbs="{./thumbs.length}" class="px-1 position-absolute top-0 start-100 translate-middle badge rounded bg-info" style="z-index: 1;">+{increment(./thumbs.length, "-1")}</span>
+				</a>
+				{{{ else }}}
 				<a class="text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 					{buildAvatar(./user, "40px", true, "avatar avatar-tooltip")}
 				</a>
-				{{{ if showSelect }}}
-				<div class="checkbox position-absolute top-100 start-50 translate-middle-x p-1 m-0 d-none d-lg-flex" style="max-width:max-content">
-					<i component="topic/select" class="fa text-muted pointer fa-square-o"></i>
-				</div>
 				{{{ end }}}
 			</div>
 			<div class="flex-grow-1 d-flex flex-wrap gap-1">
@@ -56,38 +58,30 @@
 						{{{ end }}}
 					</span>
 					{{{ end }}}
-					<span class="hidden-xs badge bg-transparent text-muted fw-normal timeago" title="{./timestampISO}"></span>
+					<span class="hidden badge bg-transparent text-muted fw-normal timeago" title="{./timestampISO}"></span>
 					{{{ if !config.theme.mobileTopicTeasers}}}
-					<span class="visible-xs-inline badge bg-transparent text-muted fw-normal timeago" title="{{{ if ./teaser.timestampISO }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
+					<span class="hidden badge bg-transparent text-muted fw-normal timeago" title="{{{ if ./teaser.timestampISO }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
 					{{{ end }}}
 				</span>
 			</div>
-			{{{ if ./thumbs.length }}}
-			<a class="position-relative text-decoration-none flex-shrink-0 d-none d-xl-block" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">
-				<img class="topic-thumb rounded-1" style="width:auto;height: 3.33rem;" src="{./thumbs.0.url}"/>
-				<span data-numthumbs="{./thumbs.length}" class="px-1 position-absolute top-0 start-100 translate-middle badge rounded bg-info" style="z-index: 1;">+{increment(./thumbs.length, "-1")}</span>
-			</a>
-			{{{ end }}}
 		</div>
 
 		<div class="d-flex p-0 col-lg-5 align-content-stretch">
 			<div class="meta stats d-none d-lg-grid col-6 gap-1 pe-2 text-muted" style="grid-template-columns: 1fr 1fr 1fr;">
 				{{{ if !reputation:disabled }}}
-				<div class="stats-votes card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
-					<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./votes}" data-toFixed="0">{./votes}</span>
-					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:votes]]</span>
-					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-chevron-up"></i>
+				<div class="stats-votes align-items-center card px-3 py-0 border-0 rounded-1">
+					<i class="fas fa-caret-up text-sm"></i>
+					<span class="human-readable-number fw-semibold" title="{./votes}" data-toFixed="0">{./votes}</span>
+					<i class="fas fa-caret-down text-sm"></i>
 				</div>
 				{{{ end }}}
-				<div class="stats-postcount card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
-					<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./postcount}" data-toFixed="0">{./postcount}</span>
-					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:posts]]</span>
-					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-message"></i>
+				<div class="stats-postcount card card-header align-items-center card card-header px-0 py-1 border-0 rounded-1">
+					<span class="human-readable-number text-sm fw-semibold" title="{./postcount}" data-toFixed="0">{./postcount}</span>
+					<span class="text-lowercase text-sm"><i class="fas fa-comments"></i></span>
 				</div>
-				<div class="stats-viewcount card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
-					<span class="human-readable-number fs-5 ff-secondary lh-1" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
-					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:views]]</span>
-					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-eye"></i>
+				<div class="stats-viewcount card card-header align-items-center card card-header px-0 py-1 border-0 rounded-1">
+					<span class="human-readable-number text-sm fw-semibold" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
+					<span class="text-lowercase text-sm"><i class="fa-solid fa-chart-simple"></i></span>
 				</div>
 			</div>
 			<div component="topic/teaser" class="meta teaser col-lg-6 {{{ if !config.theme.mobileTopicTeasers }}}d-none d-lg-block{{{ end }}}">
@@ -113,9 +107,9 @@
 			</div>
 		</div>
 		{{{ if showSelect }}}
-		<div class="checkbox position-absolute top-0 end-0 p-1 mt-3 m-0 d-flex d-lg-none" style="max-width:max-content">
-			<i component="topic/select" class="fa fa-square-o text-muted pointer"></i>
-		</div>
+				<div class="checkbox position-absolute end-0" style="max-width:max-content">
+					<i component="topic/select" class="fa text-muted pointer fa-square-o"></i>
+				</div>
 		{{{ end }}}
 	</li>
 	{{{end}}}
