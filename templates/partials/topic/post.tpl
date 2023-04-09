@@ -38,7 +38,7 @@
 			{{{ end }}}
 
 			<div class="d-flex gap-1 align-items-center">
-				<span class="text-muted">
+				<span class="text-muted text-xs">
 					{{{ if posts.toPid }}}
 					{generateRepliedTo(@value, config.timeagoCutoff)}
 					{{{ else }}}
