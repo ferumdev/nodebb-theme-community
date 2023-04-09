@@ -4,13 +4,8 @@
 		display: none;
 	}
 }
-[component="brand/wrapper"] {
-	&:hover {
-		background-color: $card-cap-bg;
-	}
-}
 
 [component="brand/logo"] {
-	max-height: 48px;
+	max-height: 40px;
 	width: auto;
 }
