@@ -15,7 +15,7 @@
 		{{{end}}}
 		</span>
 		{{{ end }}}
-		<span class="topic-title fs-4" component="topic/title">{title}
+		<span class="topic-title fs-4" component="topic/title">{title}</span>
 		{{{ if widgets.post-title-right.length }}}
 		<span data-widget-area="post-title-right">
 		{{{each widgets.post-title-right}}}
@@ -23,7 +23,6 @@
 		{{{end}}}
 		</span>
 		{{{ end }}}
-		</span>
 	</h2>
 
 	<div class="topic-info d-flex gap-2 align-items-center flex-wrap {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
