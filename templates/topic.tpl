@@ -8,7 +8,21 @@
 
 <div class="d-flex flex-column gap-3" itemid="{url}" itemscope itemtype="https://schema.org/DiscussionForumPosting">
 	<h2 component="post/header" class="tracking-tight fw-semibold fs-2 mb-0 text-break {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}" itemprop="headline">
+		{{{ if widgets.post-title-left.length }}}
+		<span data-widget-area="post-title-left">
+		{{{each widgets.post-title-left}}}
+		{{widgets.post-title-left.html}}
+		{{{end}}}
+		</span>
+		{{{ end }}}
 		<span class="topic-title fs-4" component="topic/title">{title}</span>
+		{{{ if widgets.post-title-right.length }}}
+		<span data-widget-area="post-title-right">
+		{{{each widgets.post-title-right}}}
+		{{widgets.post-title-right.html}}
+		{{{end}}}
+		</span>
+		{{{ end }}}
 	</h2>
 
 	<div class="topic-info d-flex gap-2 align-items-center flex-wrap {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
