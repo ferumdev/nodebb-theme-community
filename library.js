@@ -100,6 +100,16 @@ library.defineWidgetAreas = async function (areas) {
 			location: 'mainpost-footer',
 		},
 		{
+			name: 'Topic title left',
+			template: 'global',
+			location: 'topic-title-left',
+		},
+		{
+			name: 'Topic title right',
+			template: 'global',
+			location: 'topic-title-right',
+		},
+		{
 			name: 'Sidebar Footer',
 			template: 'global',
 			location: 'sidebar-footer',
