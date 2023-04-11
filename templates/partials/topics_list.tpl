@@ -24,10 +24,24 @@
 			</div>
 			<div class="flex-grow-1 d-flex flex-wrap gap-1">
 				<h3 component="topic/header" class="title text-break fs-5 fw-semibold m-0 tracking-tight w-100 {{{ if showSelect }}}me-4 me-lg-0{{{ end }}}">
+					{{{ if widgets.topic-title-left.length }}}
+					<span data-widget-area="topic-title-left">
+					{{{each widgets.topic-title-left}}}
+					{{widgets.topic-title-left.html}}
+					{{{end}}}
+					</span>
+					{{{ end }}}
 					{{{ if topics.noAnchor }}}
 					<span>{./title}</span>
 					{{{ else }}}
 					<a class="text-reset" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">{./title}</a>
+					{{{ end }}}
+					{{{ if widgets.topic-title-right.length }}}
+					<span data-widget-area="topic-title-right">
+					{{{each widgets.topic-title-right}}}
+					{{widgets.topic-title-right.html}}
+					{{{end}}}
+					</span>
 					{{{ end }}}
 				</h3>
 				<span component="topic/labels" class="d-flex flex-wrap gap-1">
