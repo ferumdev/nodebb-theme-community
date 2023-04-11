@@ -5,11 +5,11 @@
 </div>
 <div class="row login">
 	<div class="d-flex flex-column gap-2 {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
-		<h2 class="tracking-tight fw-semibold text-center">[[global:login]]</h2>
+		<h2 class="tracking-tight fw-semibold text-center fs-4">[[global:login]]</h2>
 		<div class="row justify-content-center gap-5">
 			{{{ if allowLocalLogin }}}
-			<div class="col-12 col-md-5 col-lg-3 px-md-0">
-				<div class="login-block">
+			<div class="col-12 col-md-7 col-lg-5 px-md-0 mb-3">
+				<div class="login-block border rounded p-4">
 					<div class="alert alert-danger alert-dismissible" id="login-error-notify" {{{ if error }}}style="display:block"{{{ else }}}style="display: none;"{{{ end }}}>
 						<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 						<strong>[[login:failed_login_attempt]]</strong>
@@ -20,7 +20,7 @@
 						<div class="mb-2 d-flex flex-column gap-2">
 							<label for="username">{allowLoginWith}</label>
 							<div>
-								<input class="form-control" type="text" placeholder="{allowLoginWith}" name="username" id="username" autocorrect="off" autocapitalize="off" value="{username}"/>
+								<input class="form-control" type="text" placeholder="" name="username" id="username" autocorrect="off" autocapitalize="off" value="{username}"/>
 							</div>
 						</div>
 						<div class="mb-2 d-flex flex-column gap-2">
@@ -31,7 +31,7 @@
 								{{{ end }}}
 							</div>
 							<div>
-								<input class="form-control" type="password" placeholder="[[user:password]]" name="password" id="password" {{{ if username }}}autocomplete="off"{{{ end }}}/>
+								<input class="form-control" type="text" placeholder="" name="password" id="password" spellcheck="false" {{{ if username }}}autocomplete="off"{{{ end }}}/>
 								<p id="caps-lock-warning" class="text-danger hidden">
 									<i class="fa fa-exclamation-triangle"></i> [[login:caps-lock-enabled]]
 								</p>
@@ -60,7 +60,7 @@
 
 						{{{ if allowRegistration }}}
 						<span class="text-sm">[[login:dont_have_account]]</span>
-						<a class="btn btn-outline-light text-body" href="{config.relative_path}/register">[[register:register]]</a>
+						<a class="btn btn-dark" href="{config.relative_path}/register">[[register:register]]</a>
 						{{{ end }}}
 					</form>
 				</div>
@@ -78,10 +78,10 @@
 								{{{ if ./icons.svg }}}
 								{./icons.svg}
 								{{{ else }}}
-								<i class="flex-shrink-0 {./icons.normal}" style="color:{./color};"></i>
+								<i class="{./icons.normal}" style="color:{./color};"></i>
 								{{{ end }}}
 								{{{ if ./labels.login }}}
-								<div class="flex-grow-1 text-body text-sm">{./labels.login}</div>
+								<div class="flex-1 text-body text-sm">{./labels.login}</div>
 								{{{ end }}}
 							</a></li>
 						{{{ end }}}
