@@ -15,7 +15,7 @@
 			{{{ end }}}
 		</div>
 		{{{ if widgets.brand-header.length }}}
-		<div data-widget-area="brand-header" class="ms-auto gap-3 p-2 align-self-center">
+		<div data-widget-area="brand-header" class="ms-auto gap-3 p-0 align-self-center">
 			{{{each widgets.brand-header}}}
 			{{./html}}
 			{{{end}}}
