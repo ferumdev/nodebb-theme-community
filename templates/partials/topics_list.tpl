@@ -69,7 +69,7 @@
 		<div class="d-flex p-0 col-lg-5 align-content-stretch">
 			<div class="meta stats d-none d-lg-grid col-6 gap-1 pe-2 text-muted" style="grid-template-columns: 1fr 1fr 1fr;">
 				{{{ if !reputation:disabled }}}
-				<div class="stats-votes align-items-center card px-3 py-0 border-0 rounded-1">
+				<div class="stats-votes align-items-center card px-3 py-0 border-0 rounded-1 bg-transparent">
 					<i class="fas fa-caret-up text-sm"></i>
 					<span class="human-readable-number fw-semibold" title="{./votes}" data-toFixed="0">{./votes}</span>
 					<i class="fas fa-caret-down text-sm"></i>
