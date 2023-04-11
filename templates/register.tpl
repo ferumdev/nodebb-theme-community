@@ -5,11 +5,11 @@
 </div>
 <div class="row register">
 	<div class="d-flex flex-column gap-2 {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
-		<h2 class="tracking-tight fw-semibold text-center">[[global:register]]</h2>
+		<h2 class="tracking-tight fw-semibold text-center fs-4">[[global:register]]</h2>
 		<div class="row justify-content-center gap-5">
 
-			<div class="col-12 col-md-5 col-lg-3 px-md-0">
-				<div class="register-block">
+			<div class="col-12 col-md-7 col-lg-5 px-md-0 mb-3">
+				<div class="register-block border rounded p-4">
 					<div class="alert alert-danger{{{ if !error }}} hidden{{{ end }}}" id="register-error-notify" >
 						<strong>[[error:registration-error]]</strong>
 						<p>{error}</p>
@@ -19,7 +19,7 @@
 						<div class="mb-2 d-flex flex-column gap-2">
 							<label for="username">[[register:username]]</label>
 							<div class="d-flex flex-column">
-								<input class="form-control" type="text" placeholder="[[register:username_placeholder]]" name="username" id="username" autocorrect="off" autocapitalize="off" autocomplete="off" />
+								<input class="form-control" type="text" placeholder="" name="username" id="username" autocorrect="off" autocapitalize="off" autocomplete="off" />
 								<span class="register-feedback text-xs text-danger" id="username-notify"></span>
 								<span class="form-text text-xs">[[register:help.username_restrictions, {minimumUsernameLength}, {maximumUsernameLength}]]</span>
 							</div>
@@ -28,7 +28,7 @@
 						<div class="mb-2 d-flex flex-column gap-2">
 							<label for="password">[[register:password]]</label>
 							<div class="d-flex flex-column">
-								<input class="form-control" type="password" placeholder="[[register:password_placeholder]]" name="password" id="password" />
+								<input class="form-control" type="text" placeholder="" name="password" id="password" spellcheck="false"/>
 								<span class="register-feedback text-xs text-danger" id="password-notify"></span>
 								<span class="form-text text-xs">[[register:help.minimum_password_length, {minimumPasswordLength}]]</span>
 								<p id="caps-lock-warning" class="text-danger hidden">
@@ -40,7 +40,7 @@
 						<div class="mb-2 d-flex flex-column gap-2">
 							<label for="password-confirm">[[register:confirm_password]]</label>
 							<div>
-								<input class="form-control" type="password" placeholder="[[register:confirm_password_placeholder]]" name="password-confirm" id="password-confirm" />
+								<input class="form-control" type="text" placeholder="" name="password-confirm" id="password-confirm" spellcheck="false"/>
 								<span class="register-feedback text-xs text-danger" id="password-confirm-notify"></span>
 							</div>
 						</div>
@@ -56,7 +56,7 @@
 						<hr/>
 
 						<span class="text-sm">[[register:already-have-account]]</span>
-						<a class="btn btn-outline-light text-body" href="{config.relative_path}/login">[[global:login]]</a>
+						<a class="btn btn-dark" href="{config.relative_path}/login">[[global:login]]</a>
 
 						<input id="token" type="hidden" name="token" value="" />
 						<input id="noscript" type="hidden" name="noscript" value="true" />
@@ -76,10 +76,10 @@
 								{{{ if ./icons.svg }}}
 								{./icons.svg}
 								{{{ else }}}
-								<i class="flex-shrink-0 {./icons.normal}" style="color:{./color};"></i>
+								<i class="{./icons.normal}" style="color:{./color};"></i>
 								{{{ end }}}
 								{{{ if ./labels.register }}}
-								<div class="flex-grow-1 text-body text-sm">{./labels.register}</div>
+								<div class="flex-1 text-body text-sm">{./labels.register}</div>
 								{{{ end }}}
 							</a>
 						</li>
