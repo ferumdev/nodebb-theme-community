@@ -1,5 +1,6 @@
 'use strict';
 
+const nconf = require.main.require('nconf');
 const meta = require.main.require('./src/meta');
 const _ = require.main.require('lodash');
 const user = require.main.require('./src/user');
@@ -29,7 +30,25 @@ library.init = async function (params) {
 		middleware.canViewUsers,
 		middleware.checkAccountPermissions,
 	], controllers.renderThemeSettings);
+	
+	if (nconf.get('isPrimary') && process.env.NODE_ENV === 'production') {
+		setTimeout(buildSkins, 0);
+	}
 };
+
+async function buildSkins() {
+	try {
+		const plugins = require.main.require('./src/plugins');
+		await plugins.prepareForBuild(['client side styles']);
+		for (const skin of meta.css.supportedSkins) {
+			// eslint-disable-next-line no-await-in-loop
+			await meta.css.buildBundle(`client-${skin}`, true);
+		}
+		require.main.require('./src/meta/minifier').killAll();
+	} catch (err) {
+		console.error(err.stack);
+	}
+}
 
 library.addAdminNavigation = async function (header) {
 	header.plugins.push({
@@ -119,6 +138,16 @@ library.defineWidgetAreas = async function (areas) {
 			template: 'global',
 			location: 'brand-header',
 		},
+		{
+			name: 'About me (before)',
+			template: 'account/profile.tpl',
+			location: 'profile-aboutme-before',
+		},
+		{
+			name: 'About me (after)',
+			template: 'account/profile.tpl',
+			location: 'profile-aboutme-after',
+		},
 	]);
 
 	return areas;
@@ -141,7 +170,7 @@ async function loadThemeConfig(uid) {
 }
 
 library.getThemeConfig = async function (config) {
-	config.theme = await loadThemeConfig(config.uid);;
+	config.theme = await loadThemeConfig(config.uid);
 	config.openDraftsOnPageLoad = false;
 	return config;
 };
