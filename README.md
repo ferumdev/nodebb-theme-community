@@ -1,4 +1,4 @@
 <details>
   <summary>Community Theme</summary>
-  Harmony v1.0.0-beta.112
+  Harmony v1.0.0-beta.115
 </details>

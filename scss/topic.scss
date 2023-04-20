@@ -40,6 +40,9 @@
 			}
 
 			[component="post"] {
+				&.selected .post-container {
+					background-color: mix($body-bg, $body-color, 90%);
+				}
 				&.deleted .post-container {
 					opacity: .5;
 				}
@@ -50,7 +53,9 @@
 					pre {
 						max-height: calc($font-size-base * 24);
 					}
-					
+					table { // text-break breaks table formatting
+						word-break:initial!important;
+					}
 					.img-fluid {
 						padding: 8px;
 						margin: 8px 0;
