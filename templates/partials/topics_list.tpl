@@ -65,13 +65,11 @@
 					{{{ if !template.category }}}
 					<a class="lh-1" href="{config.relative_path}/category/{./category.slug}">{function.buildCategoryLabel, ./category, "border"}</a>
 					{{{ end }}}
-					{{{ if ./tags.length }}}
-					<span class="lh-1 tag-list hidden-xs d-flex flex-wrap gap-1">
+					<span data-tid="{./tid}" component="topic/tags" class="lh-1 tag-list hidden-xs d-flex flex-wrap gap-1 {{{ if !./tags.length }}}hidden{{{ end }}}">
 						{{{ each ./tags }}}
 						<a href="{config.relative_path}/tags/{./valueEncoded}"><span class="badge border border-gray-300 text-muted fw-normal tag tag-class-{./class}" data-tag="{./value}">{./valueEscaped}</span></a>
 						{{{ end }}}
 					</span>
-					{{{ end }}}
 					<span class="hidden badge bg-transparent text-muted fw-normal timeago" title="{./timestampISO}"></span>
 					{{{ if !config.theme.mobileTopicTeasers}}}
 					<span class="hidden badge bg-transparent text-muted fw-normal timeago" title="{{{ if ./teaser.timestampISO }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>

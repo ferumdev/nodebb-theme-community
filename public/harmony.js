@@ -27,10 +27,12 @@ $(document).ready(function () {
 
 	require(['hooks'], function (hooks) {
 		$(window).on('action:composer.resize action:sidebar.toggle', function () {
-			$('[component="composer"]').css({
-				left: $('.sidebar-left').outerWidth(true),
+			const isRtl = $('html').attr('data-dir') === 'rtl';
+			const css = {
 				width: $('#panel').width(),
-			});
+			};
+			css[isRtl ? 'right' : 'left'] = $('.sidebar-left').outerWidth(true);
+			$('[component="composer"]').css(css);
 		});
 
 		hooks.on('filter:chat.openChat', function (hookData) {
@@ -251,11 +253,12 @@ $(document).ready(function () {
 			if (count > 1) {
 				const listEls = document.querySelectorAll(`[component="${type}/list"]`);
 				listEls.forEach((listEl) => {
-					const placeholder = listEl.querySelector('li');
-
-					for (let x = 0; x < count - 1; x++) {
-						const cloneEl = placeholder.cloneNode(true);
-						listEl.insertBefore(cloneEl, placeholder);
+					const placeholder = listEl.querySelector('*');
+					if (placeholder) {
+						for (let x = 0; x < count - 1; x++) {
+							const cloneEl = placeholder.cloneNode(true);
+							listEl.insertBefore(cloneEl, placeholder);
+						}
 					}
 				});
 			}
