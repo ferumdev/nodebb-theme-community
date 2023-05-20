@@ -15,10 +15,12 @@ ul.topics-list, ul.categories-list {
 			margin: 0 !important;
 		}
 
+		/*
 		// all other skins use link-color for unread titles
 		&.unread .title {
 			color: $link-color;
 		}
+		*/
 
 		.ui-sortable-handle {
 			cursor: move;
