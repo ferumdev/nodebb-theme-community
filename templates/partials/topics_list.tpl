@@ -70,7 +70,9 @@
 						<a href="{config.relative_path}/tags/{./valueEncoded}"><span class="badge border border-gray-300 text-muted fw-normal tag tag-class-{./class}" data-tag="{./value}">{./valueEscaped}</span></a>
 						{{{ end }}}
 					</span>
-					<span class="hidden badge bg-transparent text-muted fw-normal timeago" title="{./timestampISO}"></span>
+					{{{ if !./tags.length}}}
+					<span class="badge bg-transparent text-muted fw-normal timeago" title="{./timestampISO}"></span>
+					{{{ end }}}
 					{{{ if !config.theme.mobileTopicTeasers}}}
 					<span class="hidden badge bg-transparent text-muted fw-normal timeago" title="{{{ if ./teaser.timestampISO }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
 					{{{ end }}}
