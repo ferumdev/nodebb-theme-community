@@ -1,8 +1,7 @@
 <div component="chat/recent/room" data-roomid="{./roomId}" data-full="1" class="rounded-1 {{{ if ./unread }}}unread{{{ end }}}">
-	<div class="d-flex gap-1 justify-content-between p-1">
+	<div class="d-flex gap-1 justify-content-between">
 		<div class="chat-room-btn position-relative d-flex flex-grow-1 gap-2 justify-content-start align-items-start btn-ghost-sm ff-sans">
 			<div class="main-avatar">
-				<a class="stretched-link" href="{config.relative_path}/me/chats/{./roomId}"></a>
 				{{{ if ./users.length }}}
 				{{{ if ./groupChat}}}
 				<div class="position-relative stacked-avatars">
@@ -43,4 +42,6 @@
 		</div>
 	</div>
 </div>
+{{{ if !@last }}}
 <hr class="my-1" />
+{{{ end }}}

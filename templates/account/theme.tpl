@@ -41,6 +41,13 @@
 			</p>
 		</label>
 	</div>
+	
+	<div class="form-check mb-3">
+		<input class="form-check-input" type="checkbox" id="chatModals" name="chatModals" {{{ if config.theme.chatModals }}}checked{{{ end }}}>
+		<label class="form-check-label" for="chatModals">
+			[[themes/harmony:settings.chatModals]]
+		</label>
+	</div>
 
 </form>
 

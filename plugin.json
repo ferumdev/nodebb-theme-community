@@ -20,5 +20,6 @@
 	},
 	"staticDirs": {
 		"nunito": "node_modules/@fontsource/nunito/files"
-	}
+	},
+	"languages": "languages"
 }
