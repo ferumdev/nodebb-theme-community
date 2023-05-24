@@ -7,7 +7,7 @@
 {{{ end }}}
 
 <div class="d-flex flex-column gap-3" itemid="{url}" itemscope itemtype="https://schema.org/DiscussionForumPosting">
-	<div class="d-flex">
+	<div class="d-flex flex-wrap">
 		<div class="d-flex flex-column gap-3 flex-grow-1">
 			<h2 component="post/header" class="tracking-tight fw-semibold fs-2 mb-0 text-break {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}" itemprop="headline">
 				{{{ if widgets.post-title-left.length }}}
@@ -48,19 +48,13 @@
 					{{{each icons}}}<span class="lh-1">{@value}</span>{{{end}}}
 				</span>
 				<a class="lh-1" href="{config.relative_path}/category/{category.slug}">{function.buildCategoryLabel, category, "border"}</a>
-				<div data-tid="{./tid}" component="topic/tags" class="lh-1 tags tag-list d-flex flex-wrap hidden-xs gap-2"><!-- IMPORT partials/topic/tags.tpl --></div>
+				<div data-tid="{./tid}" component="topic/tags" class="lh-1 tags tag-list d-flex flex-wrap hidden-xs hidden-empty gap-2"><!-- IMPORT partials/topic/tags.tpl --></div>
 				<div class="d-flex hidden-xs gap-2">
 					<!-- IMPORT partials/topic/stats.tpl -->
 				</div>
 			</div>
 		</div>
-		<div class="d-flex gap-2 justify-content-end align-items-center mt-2" component="topic/thumb/list">
-			{{{ each thumbs }}}
-			<a class="d-inline-block h-100" href="{./url}">
-				<img class="rounded-1 h-100" src="{./url}" />
-			</a>
-			{{{ end }}}
-		</div>
+		<div class="d-flex gap-2 justify-content-end align-items-center mt-2 hidden-empty" component="topic/thumb/list"><!-- IMPORT partials/topic/thumbs.tpl --></div>
 	</div>
 
 	<div class="row">
