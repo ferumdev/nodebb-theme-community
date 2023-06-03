@@ -2,8 +2,10 @@
 
 $weights: $font-weight-light, $font-weight-normal, $font-weight-semibold, $font-weight-bold;
 
-@include Nunito.faces(
-  $weights: $weights,
-  $display: fallback,
-  $directory: "./plugins/nodebb-theme-community/nunito"
-);
+@each $weight in $weights {
+	@include Nunito.fontFace(
+		$weight: $weight,
+		$display: fallback,
+		$fontDir: "./plugins/nodebb-theme-community/nunito"
+	);
+}
