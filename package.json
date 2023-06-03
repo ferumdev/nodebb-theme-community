@@ -1,6 +1,6 @@
 {
   "name": "nodebb-theme-community",
-  "version": "1.0.38",
+  "version": "1.0.40",
   "nbbpm": {
     "compatibility": "^3.0.0"
   },
@@ -37,7 +37,7 @@
     "url": "https://github.com/ferumdev/nodebb-theme-community/issues"
   },
   "dependencies": {
-    "@fontsource/nunito": "^4.5.12"
+    "@fontsource/nunito": "5.0.2"
   },
   "devDependencies": {
     "eslint": "^8.0.0",
