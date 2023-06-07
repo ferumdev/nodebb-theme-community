@@ -1,7 +1,7 @@
 <div class="d-flex w-100">
 	<div class="pagination-block text-bg-light m-2 rounded-1 border border-gray-300 w-100" style="height:30px;">
 		<div class="position-relative">
-			<div class="progress-bar rounded-pill bg-info d-block position-absolute" style="height:28px;"></div>
+			<div class="progress-bar rounded bg-transparent d-block position-absolute" style="height:28px;"></div>
 		</div>
 		<div class="wrapper dropup-center d-flex align-items-center justify-content-between w-100 h-100 text-muted" style="padding: 5px 0px;">
 			<div class="d-flex">
