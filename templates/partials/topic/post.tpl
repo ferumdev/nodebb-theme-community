@@ -92,8 +92,8 @@
 			<span class="ms-2 replies-count fw-semibold" component="post/reply-count/text" data-replies="{posts.replies.count}">{posts.replies.text}</span>
 			<span class="ms-2 replies-last hidden-xs fw-semibold">[[topic:last_reply_time]] <span class="timeago" title="{posts.replies.timestampISO}"></span></span>
 
-			<i class="fa fa-fw fa-chevron-down" component="post/replies/open"></i>
-			<i class="fa fa-fw fa-chevron-up hidden" component="post/replies/close"></i>
+			<i class="fa fa-fw fa-thumbs-down" component="post/replies/open"></i>
+			<i class="fa fa-fw fa-thumbs-up hidden" component="post/replies/close"></i>
 			<i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
 		</a>
 		{{{ end }}}
@@ -109,7 +109,7 @@
 		{{{ if !reputation:disabled }}}
 		<div class="d-flex votes align-items-stretch">
 			<a component="post/upvote" href="#" class="btn-ghost-sm {{{ if posts.upvoted }}}upvoted{{{ end }}}">
-				<i class="fa fa-fw fa-chevron-up text-primary"></i>
+				<i class="fa fa-fw fa-thumbs-up text-primary"></i>
 			</a>
 
 			<meta itemprop="upvoteCount" content="{posts.upvotes}">
@@ -118,7 +118,7 @@
 
 			{{{ if !downvote:disabled }}}
 			<a component="post/downvote" href="#" class="btn-ghost-sm {{{ if posts.downvoted }}}downvoted{{{ end }}}">
-				<i class="fa fa-fw fa-chevron-down text-primary"></i>
+				<i class="fa fa-fw fa-thumbs-down text-primary"></i>
 			</a>
 			{{{ end }}}
 		</div>
