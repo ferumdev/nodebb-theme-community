@@ -1,4 +1,4 @@
-<div class="d-none d-md-flex w-100">
+<div class="d-flex w-100">
 	<div class="pagination-block text-bg-light m-2 rounded-1 border border-gray-300 w-100" style="height:30px;">
 		<div class="position-relative">
 			<div class="progress-bar rounded bg-transparent d-block position-absolute" style="height:28px;"></div>

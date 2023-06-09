@@ -1,7 +1,5 @@
 <div component="bottombar" class="bottombar d-flex flex-column d-lg-none fixed-bottom ff-secondary gap-1 align-items-center">
 
-	<!-- IMPORT partials/topic/navigator-mobile.tpl -->
-
 	<div class="bottombar-nav p-2 text-dark bg-light d-flex justify-content-between align-items-center w-100">
 		<div class="">
 			<a href="#" role="button" class="nav-link nav-btn d-flex justify-content-between align-items-center position-relative" data-bs-toggle="dropdown">
