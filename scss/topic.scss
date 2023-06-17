@@ -35,6 +35,11 @@
 				}
 			}
 
+			> [component="post"] > [component="post/footer"] {
+				margin-left: calc($spacer * 2.5);
+			}
+
+			
 			[component="post"] {
 				&.selected .post-container {
 					background-color: mix($body-bg, $body-color, 90%);
@@ -78,9 +83,6 @@
 					
 				}
 
-				> [component="post/footer"] {
-					margin-left: calc($spacer * 2.5);
-				}
 			}
 
 			[component="post/reply-count"] {
@@ -128,8 +130,9 @@
 
 		[component="post"] {
 			padding-top: 0 !important;
-
+			padding-bottom: $spacer;
 			&:last-of-type {
+				padding-bottom: 0;
 				.post-footer {
 					border-bottom: none !important;
 				}
