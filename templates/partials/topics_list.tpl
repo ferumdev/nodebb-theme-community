@@ -1,19 +1,19 @@
 <ul component="category" class="topics-list list-unstyled" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
 
 	{{{ each topics }}}
-	<li component="category/topic" class="category-item position-relative w-100 border-bottom py-3 d-flex flex-column flex-lg-row align-items-start {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
+	<li component="category/topic" class="category-item border-bottom py-3 d-flex flex-column flex-lg-row align-items-start {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
 		<link itemprop="url" content="{config.relative_path}/topic/{./slug}" />
 		<meta itemprop="name" content="{function.stripTags, ./title}" />
 		<meta itemprop="itemListOrder" content="descending" />
 		<meta itemprop="position" content="{./index}" />
-		<a id="{./index}" data-index="{./index}" component="topic/anchor" class="position-absolute"></a>
+		<a id="{./index}" data-index="{./index}" component="topic/anchor"></a>
 
 
-		<div class="d-flex p-0 col-lg-7 gap-2 gap-lg-3 pe-1 align-items-start">
+		<div class="d-flex p-0 col-12 col-lg-7 gap-2 gap-lg-3 pe-1 align-items-start">
 			<div class="flex-shrink-0 position-relative">
 				{{{ if ./thumbs.length }}}
 				<a class="position-relative text-decoration-none flex-shrink-0" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">
-				<img class="topic-thumb rounded-1" style="width:auto;height: 3.33rem;" src="{./thumbs.0.url}"/>
+				<img class="topic-thumb rounded-1 bg-light" style="width:auto;max-width: 5.33rem;height: 3.33rem;object-fit: contain;" src="{./thumbs.0.url}"/>
 				<span data-numthumbs="{./thumbs.length}" class="px-1 position-absolute top-0 start-100 translate-middle badge rounded bg-info" style="z-index: 1;">+{increment(./thumbs.length, "-1")}</span>
 				</a>
 				{{{ else }}}
@@ -22,7 +22,7 @@
 				</a>
 				{{{ end }}}
 			</div>
-			<div class="flex-grow-1 d-flex flex-wrap gap-1">
+			<div class="flex-grow-1 d-flex flex-wrap gap-1 position-relative">
 				<h3 component="topic/header" class="title text-break fs-5 fw-semibold m-0 tracking-tight w-100 {{{ if showSelect }}}me-4 me-lg-0{{{ end }}}">
 					{{{ if widgets.topic-title-left.length }}}
 					<span data-widget-area="topic-title-left">
