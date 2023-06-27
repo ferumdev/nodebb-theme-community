@@ -100,6 +100,11 @@ library.defineWidgetAreas = async function (areas) {
 
 	areas = areas.concat([
 		{
+			name: 'QuickReply Button',
+			template: 'global',
+			location: 'quickreply-button',
+		},
+		{
 			name: 'Topic title left',
 			template: 'topic.tpl',
 			location: 'post-title-left',

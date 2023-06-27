@@ -7,7 +7,7 @@
 {{{ end }}}
 
 <div class="d-flex align-items-start gap-3">
-	<div class="icon py-1 bg-body d-none d-sm-block position-sticky" style="top:5.5rem;">
+	<div class="icon bg-body d-none d-sm-block rounded-circle position-sticky" style="outline: 2px solid var(--bs-body-bg); top:5.5rem;">
 		<a class="d-inline-block position-relative text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 			{buildAvatar(posts.user, "48px", true, "", "user/picture")}
 			<span component="user/status" class="position-absolute translate-middle-y border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
@@ -77,9 +77,9 @@
 	<div component="post/signature" data-uid="{posts.user.uid}" class="text-xs text-muted mt-2">{posts.user.signature}</div>
 	{{{ end }}}
 
-	<div class="clearfix">
+	<div class="d-flex">
 		{{{ if !hideReplies }}}
-		<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="d-flex gap-2 align-items-center mt-2 btn-outline border rounded-1 p-1 threaded-replies user-select-none float-start text-muted text-decoration-none {{{ if (!./replies || shouldHideReplyContainer(@value)) }}}hidden{{{ end }}}">
+		<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="d-flex gap-2 align-items-center mt-2 btn-outline border rounded-1 p-1 threaded-replies user-select-none text-muted text-decoration-none text-xs {{{ if (!./replies || shouldHideReplyContainer(@value)) }}}hidden{{{ end }}}">
 			<span component="post/reply-count/avatars" class="avatars d-inline-flex gap-1 align-items-top {{{ if posts.replies.hasMore }}}hasMore{{{ end }}}">
 				{{{each posts.replies.users}}}
 				<span>{buildAvatar(posts.replies.users, "20px", true, "avatar-tooltip")}</span>
@@ -99,7 +99,7 @@
 		{{{ end }}}
 	</div>
 
-	<div component="post/replies/container" class="my-2 col-11 border rounded-1 p-3"></div>
+	<div component="post/replies/container" class="my-2 col-11 border rounded-1 p-3 hidden-empty"></div>
 
 	<div component="post/actions" class="d-flex justify-content-end gap-1 post-tools">
 		<!-- IMPORT partials/topic/reactions.tpl -->

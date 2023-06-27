@@ -6,7 +6,7 @@
 			{{{ if loggedInUser.status }}}<span component="user/status" class="position-absolute translate-middle-y border border-white border-2 rounded-circle status {loggedInUser.status}"><span class="visually-hidden">[[global:{loggedInUser.status}]]</span></span>{{{ end }}}
 		</a>
 	</div>
-	<form class="flex-grow-1 d-flex flex-column gap-2" method="post" action="{config.relative_path}/compose">
+	<form class="flex-grow-1 d-flex flex-column gap-2" name="quickreply" method="post" action="{config.relative_path}/compose">
 		<input type="hidden" name="tid" value="{tid}" />
 		<input type="hidden" name="_csrf" value="{config.csrf_token}" />
 		<div class="quickreply-message position-relative">
@@ -14,6 +14,13 @@
 			<div class="imagedrop"><div>[[topic:composer.drag_and_drop_images]]</div></div>
 		</div>
 		<div>
+			{{{ if widgets.quickreply-button.length }}}
+			<span data-widget-area="quickreply-button">
+			{{{each widgets.quickreply-button}}}
+			{{widgets.quickreply-button.html}}
+			{{{end}}}
+			</span>
+			{{{end}}}
 			<div class="d-flex justify-content-end gap-2">
 				<button type="submit" component="topic/quickreply/expand" class="btn btn-sm btn-outline" formmethod="get"><i class="fa fa-expand"></i></button>
 				<button type="submit" component="topic/quickreply/button" class="btn btn-sm btn-primary">[[topic:post-quick-reply]]</button>

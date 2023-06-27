@@ -1,26 +1,22 @@
 .pagination-block { display: none; }
 
 .page-topic {
-	[component="topic/title"] {
-		font-size: 28px;
-		line-height: 34px;
-		font-weight: $font-weight-semibold;
-	}
-
 	[component="topic/reply"], [component="topic/reply/locked"], [component="topic/reply/guest"] {
 		font-size: 14px;
 		line-height: 20px;
 	}
 
 	.topic {
-		.posts {
+		.posts-container {
 			max-width: 960px;
 			width: 960px;
+		}
+
+		.posts {
 			// fixes code blocks pushing content out on mobile
 			@include media-breakpoint-down(md) {
 				max-width: calc(100vw - $grid-gutter-width);
 			}
-			list-style-type: none;
 
 			&.timeline {
 				@include timeline-style;
@@ -39,7 +35,6 @@
 				margin-left: calc($spacer * 2.5);
 			}
 
-			
 			[component="post"] {
 				&.selected .post-container {
 					background-color: mix($body-bg, $body-color, 90%);
@@ -64,7 +59,7 @@
 							}
 						}
 					}
-					
+
 					pre {
 						max-height: calc($font-size-base * 24);
 					}
@@ -73,20 +68,7 @@
 						 	word-break:initial!important;
 						}
 					}
-					.img-fluid {
-						padding: 8px;
-						margin: 8px 0;
-						border: 1px solid var(--bs-border-color);
-						background-color: var(--bs-light);
-						border-radius: var(--bs-border-radius); max-height: 450px;
-					}
-					
 				}
-
-			}
-
-			[component="post/reply-count"] {
-				font-size: $font-size-base * .75;
 			}
 
 			[component="post/upvote"], [component="post/downvote"] {
@@ -94,8 +76,7 @@
 					background-color: lighten($btn-ghost-hover-color, 5%);
 
 					&:hover {
-					background-color: $btn-ghost-hover-color;
-
+						background-color: $btn-ghost-hover-color;
 					}
 				}
 			}
@@ -103,15 +84,10 @@
 	}
 
 	.quick-reply {
-		max-width: 960px;
 		@include topic-avatars();
 	}
 
 	[component="post/replies/container"] {
-		&:empty {
-			display: none;
-		}
-
 		.icon {
 			display: none !important;
 		}
@@ -148,7 +124,6 @@
 			opacity: 1;
 		}
 	}
-	
 	[component="topic/thumb/list"] {
 		height: calc($font-size-base * 4);
 	}
