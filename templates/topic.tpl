@@ -54,7 +54,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="d-none d-lg-flex gap-2 justify-content-end align-items-center mt-2 hidden-empty" component="topic/thumb/list"><!-- IMPORT partials/topic/thumbs.tpl --></div>
+		<div class="d-none d-lg-flex gap-2 justify-content-end align-items-center mt-0 hidden-empty" component="topic/thumb/list"><!-- IMPORT partials/topic/thumbs.tpl --></div>
 	</div>
 
 	<div class="row">
