@@ -1,7 +1,7 @@
 <ul component="category" class="topics-list list-unstyled" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
 
 	{{{ each topics }}}
-	<li component="category/topic" class="category-item border-bottom py-3 d-flex flex-column flex-lg-row align-items-start {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
+	<li component="category/topic" class="category-item border-bottom py-3 position-relative w-100 d-flex flex-column flex-lg-row align-items-start {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
 		<link itemprop="url" content="{config.relative_path}/topic/{./slug}" />
 		<meta itemprop="name" content="{function.stripTags, ./title}" />
 		<meta itemprop="itemListOrder" content="descending" />
