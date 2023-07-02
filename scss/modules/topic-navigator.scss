@@ -8,6 +8,7 @@
 		opacity: 0;
 		&.ready {
 			filter: none;
+			opacity: 1;
 		}
 		&.noreplies {
 			pointer-events: none;
