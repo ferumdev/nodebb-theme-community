@@ -101,7 +101,7 @@ library.defineWidgetAreas = async function (areas) {
 	areas = areas.concat([
 		{
 			name: 'QuickReply Button',
-			template: 'global',
+			template: 'topic.tpl',
 			location: 'quickreply-button',
 		},
 		{
@@ -153,6 +153,11 @@ library.defineWidgetAreas = async function (areas) {
 			name: 'About me (after)',
 			template: 'account/profile.tpl',
 			location: 'profile-aboutme-after',
+		},
+		{
+			name: 'Chat Header',
+			template: 'chats.tpl',
+			location: 'header',
 		},
 	]);
 

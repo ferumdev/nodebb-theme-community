@@ -1,8 +1,4 @@
 .page-topic {
-	[component="topic/reply"], [component="topic/reply/locked"], [component="topic/reply/guest"] {
-		font-size: 14px;
-		line-height: 20px;
-	}
 
 	.topic {
 		.posts-container {
@@ -58,9 +54,6 @@
 						}
 					}
 
-					pre {
-						max-height: calc($font-size-base * 24);
-					}
 					@include media-breakpoint-up(lg) {
 						table { // text-break breaks table formatting
 						 	word-break:initial!important;

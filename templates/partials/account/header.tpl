@@ -1,4 +1,4 @@
-<div class="account">
+<div class="account w-100 mx-auto">
 	<div data-widget-area="header">
 		{{{each widgets.header}}}
 		{{widgets.header.html}}
@@ -22,7 +22,7 @@
 	</div>
 
 	<div class="d-flex flex-column flex-md-row gap-2 w-100 pb-4 mb-4 mt-2 border-bottom">
-		<div {{{ if (allowProfilePicture && isSelfOrAdminOrGlobalModerator)}}}component="profile/change/picture"{{{ end }}} class="avatar-wrapper border-4 position-relative align-self-center align-self-md-start hover-parent" style="margin-top: -75px;">
+		<div {{{ if (allowProfilePicture && isSelfOrAdminOrGlobalModerator)}}}component="profile/change/picture"{{{ end }}} class="avatar-wrapper border border-white border-4 rounded-circle position-relative align-self-center align-self-md-start hover-parent" style="margin-top: -75px;">
 			{buildAvatar(@value, "142px", true)}
 			{{{ if (allowProfilePicture && isSelfOrAdminOrGlobalModerator)}}}
 			<div component="profile/change/picture" class="d-none d-md-block pointer p-2 rounded-1 opacity-75 text-bg-light position-absolute top-50 start-50 translate-middle hover-visible">
@@ -47,9 +47,7 @@
 							{{{ end }}}
 						</div>
 					</div>
-					
 					<div class="d-flex gap-2" component="user/badges"></div>
-
 					{{{ if isAdminOrGlobalModeratorOrModerator }}}
 					{{{ if banned }}}
 					<div class="text-xm text-muted">
@@ -97,4 +95,3 @@
 	<div class="d-flex flex-column flex-md-row">
 		<!-- IMPORT partials/account/sidebar-left.tpl -->
 		<div class="account-content flex-grow-1 ps-md-2 ps-lg-3 ps-xl-4" style="min-width: 0;">
-
