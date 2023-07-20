@@ -85,16 +85,16 @@
 				{{{ if !reputation:disabled }}}
 				<div class="stats-votes align-items-center card px-3 py-0 border-0 rounded-1 bg-transparent">
 					<i class="fas fa-caret-up text-sm"></i>
-					<span class="human-readable-number fw-semibold" title="{./votes}" data-toFixed="0">{./votes}</span>
+					<span class="fw-semibold" title="{./votes}">{humanReadableNumber(./votes, 0)}</span>
 					<i class="fas fa-caret-down text-sm"></i>
 				</div>
 				{{{ end }}}
 				<div class="stats-postcount card card-header align-items-center card card-header px-0 py-1 border-0 rounded-1">
-					<span class="human-readable-number text-sm fw-semibold" title="{./postcount}" data-toFixed="0">{./postcount}</span>
+					<span class="text-sm fw-semibold" title="{./postcount}">{humanReadableNumber(./postcount, 0)}</span>
 					<span class="text-lowercase text-sm"><i class="fas fa-comments"></i></span>
 				</div>
 				<div class="stats-viewcount card card-header align-items-center card card-header px-0 py-1 border-0 rounded-1">
-					<span class="human-readable-number text-sm fw-semibold" title="{./viewcount}" data-toFixed="0">{./viewcount}</span>
+					<span class="text-sm fw-semibold" title="{./viewcount}">{humanReadableNumber(./viewcount, 0)}</span>
 					<span class="text-lowercase text-sm"><i class="fa-solid fa-chart-simple"></i></span>
 				</div>
 			</div>

@@ -12,7 +12,7 @@
 		<div class="">
 			<div class="d-flex justify-content-end gap-2">
 				{{{ if showInviteButton }}}
-				<button component="user/invite" class="btn btn-primary btn-sm text-nowrap"><i class="fa fa-user-plus"></i> [[users:invite]]</button>
+				<button component="user/invite" class="btn btn-primary btn-sm text-nowrap"><i class="fa fa-user-plus"></i> <span class="d-none d-xl-inline"> [[users:invite]]</span></button>
 				{{{ end }}}
 				{{{ if displayUserSearch }}}
 				<div class="search">

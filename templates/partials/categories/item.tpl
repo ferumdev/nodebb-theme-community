@@ -1,4 +1,4 @@
-<li component="categories/category" data-cid="{./cid}" class="w-100 border-bottom py-3 py-lg-4 gap-1 d-flex flex-column flex-lg-row align-items-start category-{./cid}">
+<li component="categories/category" data-cid="{./cid}" class="w-100 border-bottom py-3 py-lg-4 gap-1 d-flex flex-column flex-lg-row align-items-start category-{./cid} {./unread-class}">
 	<meta itemprop="name" content="{./name}">
 
 	<div class="d-flex col-lg-7 gap-2 gap-lg-3">
@@ -6,7 +6,7 @@
 		{buildCategoryIcon(@value, "40px", "rounded-1")}
 		</div>
 		<div class="flex-grow-1 d-flex flex-wrap gap-1">
-			<h2 class="title text-break fs-5 fw-semibold m-0 tracking-tight w-100">
+			<h2 class="title text-break fs-4 fw-semibold m-0 tracking-tight w-100">
 				<!-- IMPORT partials/categories/link.tpl -->
 			</h2>
 			{{{ if ./descriptionParsed }}}
@@ -43,20 +43,22 @@
 		<div class="d-flex col-lg-5 align-content-stretch">
 			<div class="meta stats d-none d-lg-grid col-6 gap-1 pe-2 text-muted" style="grid-template-columns: 1fr 1fr;">
 				<div class="card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
-					<span class="human-readable-number fs-6 ff-secondary lh-2 fw-semibold" title="{./totalTopicCount}" data-toFixed="0">{./totalTopicCount}</span>
-					<span class="d-none text-lowercase text-xs">[[global:topics]]</span>
-					<i class="fa fa-fw text-xs text-muted opacity-75 fa-comment"></i>
+					<span class="fs-5 ff-secondary lh-1" title="{./totalTopicCount}">{humanReadableNumber(./totalTopicCount, 0)}</span>
+					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:topics]]</span>
+					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-list"></i>
 				</div>
 				<div class="card card-header border-0 p-2 overflow-hidden rounded-1 d-flex flex-column align-items-center">
-					<span class="human-readable-number fs-6 ff-secondary lh-2 fw-semibold" title="{./totalPostCount}" data-toFixed="0">{./totalPostCount}</span>
-					<span class="d-none text-lowercase text-xs">[[global:posts]]</span>
-					<i class="fa fa-fw text-xs text-muted opacity-75 fa-reply-all"></i>
+					<span class="fs-5 ff-secondary lh-1" title="{./totalPostCount}">{humanReadableNumber(./totalPostCount, 0)}</span>
+					<span class="d-none d-xl-flex text-lowercase text-xs">[[global:posts]]</span>
+					<i class="d-xl-none fa fa-fw text-xs text-muted opacity-75 fa-message"></i>
 				</div>
 			</div>
 			{{{ if !config.hideCategoryLastPost }}}
+			<!--noindex-->
 			<div component="topic/teaser" class="teaser col-lg-6 {{{ if !config.theme.mobileTopicTeasers }}}d-none d-lg-block{{{ end }}}">
 				<!-- IMPORT partials/categories/lastpost.tpl -->
 			</div>
+			<!--/noindex-->
 			{{{ end }}}
 		</div>
 	{{{ end }}}
