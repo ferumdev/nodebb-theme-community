@@ -1,7 +1,7 @@
 <ul component="category" class="topics-list list-unstyled" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
 
 	{{{ each topics }}}
-	<li component="category/topic" class="category-item border-bottom py-3 position-relative w-100 d-flex flex-column flex-lg-row align-items-start {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
+	<li component="category/topic" class="category-item border-bottom py-3 position-relative w-100 d-flex flex-column flex-lg-row gap-2 gap-lg-0 align-items-start {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
 		<link itemprop="url" content="{config.relative_path}/topic/{./slug}" />
 		<meta itemprop="name" content="{function.stripTags, ./title}" />
 		<meta itemprop="itemListOrder" content="descending" />
@@ -9,7 +9,7 @@
 		<a id="{./index}" data-index="{./index}" component="topic/anchor"></a>
 
 
-		<div class="d-flex p-0 col-12 col-lg-7 gap-2 gap-lg-3 pe-1 align-items-start">
+		<div class="d-flex p-0 col-12 col-lg-7 gap-2 gap-lg-3 pe-1 align-items-start {{{ if config.theme.mobileTopicTeasers }}}mb-2 mb-lg-0{{{ end }}}">
 			<div class="flex-shrink-0 position-relative">
 				{{{ if ./thumbs.length }}}
 				<a class="position-relative text-decoration-none flex-shrink-0" href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">
@@ -80,7 +80,7 @@
 			</div>
 		</div>
 
-		<div class="d-flex p-0 col-lg-5 align-content-stretch">
+		<div class="d-flex p-0 col-lg-5 col-12 align-content-stretch">
 			<div class="meta stats d-none d-lg-grid col-6 gap-1 pe-2 text-muted" style="grid-template-columns: 1fr 1fr 1fr;">
 				{{{ if !reputation:disabled }}}
 				<div class="stats-votes align-items-center card px-3 py-0 border-0 rounded-1 bg-transparent">
@@ -98,9 +98,8 @@
 					<span class="text-lowercase text-sm"><i class="fa-solid fa-chart-simple"></i></span>
 				</div>
 			</div>
-			<div component="topic/teaser" class="meta teaser col-lg-6 {{{ if !config.theme.mobileTopicTeasers }}}d-none d-lg-block{{{ end }}}">
-				<div class="lastpost background-link-container border-start border-2 lh-sm h-100" style="border-color: {./category.bgColor}!important;">
-					<a class="background-link" href="{config.relative_path}/topic/{./slug}/{./teaser.index}"></a>
+			<div component="topic/teaser" class="meta teaser col-lg-6 col-12 {{{ if !config.theme.mobileTopicTeasers }}}d-none d-lg-block{{{ end }}}">
+				<div class="lastpost border-start border-2 lh-sm h-100 d-flex flex-column gap-1" style="border-color: {./category.bgColor}!important;">
 					{{{ if ./unreplied }}}
 					<div class="ps-2 text-xs">
 						[[category:no_replies]]
@@ -112,7 +111,8 @@
 						<a class="permalink text-muted timeago text-xs" href="{config.relative_path}/topic/{./slug}/{./teaser.index}" title="{./teaser.timestampISO}">
 						</a>
 					</div>
-					<div class="post-content text-xs ps-2 line-clamp-2 lh-sm text-break">
+					<div class="post-content text-xs ps-2 line-clamp-sm-2 lh-sm text-break position-relative flex-fill">
+						<a class="stretched-link" href="{config.relative_path}/topic/{./slug}/{./teaser.index}"></a>
 						{./teaser.content}
 					</div>
 					{{{ end }}}
