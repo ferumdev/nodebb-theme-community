@@ -92,8 +92,8 @@
 			<span class="ms-2 replies-count fw-semibold" component="post/reply-count/text" data-replies="{posts.replies.count}">{posts.replies.text}</span>
 			<span class="ms-2 replies-last hidden-xs fw-semibold">[[topic:last_reply_time]] <span class="timeago" title="{posts.replies.timestampISO}"></span></span>
 
-			<i class="fa fa-fw fa-thumbs-down" component="post/replies/open"></i>
-			<i class="fa fa-fw fa-thumbs-up hidden" component="post/replies/close"></i>
+			<i class="fa fa-fw fa-chevron-down" component="post/replies/open"></i>
+			<i class="fa fa-fw fa-chevron-up hidden" component="post/replies/close"></i>
 			<i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
 		</a>
 		{{{ end }}}

@@ -9,7 +9,7 @@
 <div class="d-flex flex-column gap-3" itemid="{url}" itemscope itemtype="https://schema.org/DiscussionForumPosting">
 	<div class="d-flex flex-wrap">
 		<div class="d-flex flex-column gap-3 flex-grow-1">
-			<h2 component="post/header" class="tracking-tight fw-semibold fs-4 mb-0 text-break {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}" itemprop="headline">
+			<h1 component="post/header" class="tracking-tight fw-semibold fs-4 mb-0 text-break {{{ if config.theme.centerHeaderElements }}}text-center{{{ end }}}" itemprop="headline">
 				{{{ if widgets.post-title-left.length }}}
 				<span data-widget-area="post-title-left">
 				{{{each widgets.post-title-left}}}
@@ -25,7 +25,7 @@
 				{{{end}}}
 				</span>
 				{{{ end }}}
-			</h2>
+			</h1>
 
 			<div class="topic-info d-flex gap-2 align-items-center flex-wrap {{{ if config.theme.centerHeaderElements }}}justify-content-center{{{ end }}}">
 				<span component="topic/labels" class="d-flex gap-2 {{{ if (!scheduled && (!pinned && (!locked && (!oldCid && !icons.length)))) }}}hidden{{{ end }}}">
@@ -57,7 +57,7 @@
 		<div class="d-none d-lg-flex gap-2 justify-content-end align-items-center mt-0 hidden-empty" component="topic/thumb/list"><!-- IMPORT partials/topic/thumbs.tpl --></div>
 	</div>
 
-	<div class="row">
+	<div class="row mb-4 mb-lg-0">
 		<div class="topic {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 			<!-- IMPORT partials/post_bar.tpl -->
 

@@ -1,10 +1,12 @@
 @use "@fontsource/nunito/scss/mixins" as Nunito;
 
 $weights: $font-weight-light, $font-weight-normal, $font-weight-semibold, $font-weight-bold;
+$subsets: (latin, latin-ext);
 
 @each $weight in $weights {
 	@include Nunito.fontFace(
 		$weight: $weight,
+		$subsets: $subsets,
 		$display: fallback,
 		$fontDir: "./plugins/nodebb-theme-community/nunito"
 	);

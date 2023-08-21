@@ -57,9 +57,9 @@
 						<i class="fa fa-lock"></i>
 						<span class="d-none d-xl-inline">[[topic:locked]]</span>
 					</span>
-					<span class="badge border border-gray-300 text-muted {{{ if !./oldCid }}}hidden{{{ end }}}">
+					<span class="badge border border-gray-300 text-muted {{{ if !./oldCid }}}hidden{{{ end }}} d-none">
 						<i class="fa fa-arrow-circle-right"></i>
-						<span class="d-none d-xl-inline">[[topic:moved]]</span>
+						<span class="d-none">[[topic:moved]]</span>
 					</span>
 					{{{each ./icons}}}<span class="lh-1">{@value}</span>{{{end}}}
 					{{{ if !template.category }}}
