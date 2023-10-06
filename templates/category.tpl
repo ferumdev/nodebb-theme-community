@@ -28,15 +28,15 @@
 <div class="row mt-3">
 	<div class="category d-flex flex-column {{{if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<!-- IMPORT partials/category/subcategory.tpl -->
-
+		
+		{{{ if (topics.length || privileges.topics:create) }}}
 		<!-- IMPORT partials/topic-list-bar.tpl -->
-
-		{{{ if !topics.length }}}
-		{{{ if privileges.topics:create }}}
-		<div class="alert alert-info" id="category-no-topics">
-			[[category:no_topics]]
-		</div>
 		{{{ end }}}
+
+		{{{ if (!topics.length && privileges.topics:create) }}}
+		<div class="alert alert-info" id="category-no-topics">
+			[[category:no-topics]]
+		</div>
 		{{{ end }}}
 
 		<!-- IMPORT partials/topics_list.tpl -->

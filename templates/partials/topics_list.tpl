@@ -44,7 +44,7 @@
 					</span>
 					{{{ end }}}
 				</h3>
-				<span component="topic/labels" class="d-flex flex-wrap gap-1">
+				<span component="topic/labels" class="d-flex flex-wrap gap-1 w-100">
 					<span component="topic/scheduled" class="badge border border-gray-300 text-muted {{{ if !./scheduled }}}hidden{{{ end }}}">
 						<i class="fa fa-clock-o"></i>
 						<span class="d-none d-xl-inline">[[topic:scheduled]]</span>
@@ -63,7 +63,7 @@
 					</span>
 					{{{each ./icons}}}<span class="lh-1">{@value}</span>{{{end}}}
 					{{{ if !template.category }}}
-					<a class="lh-1" href="{config.relative_path}/category/{./category.slug}">{function.buildCategoryLabel, ./category, "border"}</a>
+					{function.buildCategoryLabel, ./category, "a", "border"}
 					{{{ end }}}
 					<span data-tid="{./tid}" component="topic/tags" class="lh-1 tag-list hidden-xs d-flex flex-wrap gap-1 {{{ if !./tags.length }}}hidden{{{ end }}}">
 						{{{ each ./tags }}}
@@ -76,6 +76,9 @@
 					{{{ if !config.theme.mobileTopicTeasers}}}
 					<span class="hidden badge bg-transparent text-muted fw-normal timeago" title="{{{ if ./teaser.timestampISO }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
 					{{{ end }}}
+					<div class="d-block d-lg-none ms-auto card card-header border-0 p-1 me-1 overflow-hidden rounded-1 d-flex">
+						<span class="text-xs fw-semibold lh-1">{humanReadableNumber(./postcount, 0)}</span>
+					</div>
 				</span>
 			</div>
 		</div>
@@ -102,7 +105,7 @@
 				<div class="lastpost border-start border-2 lh-sm h-100 d-flex flex-column gap-1" style="border-color: {./category.bgColor}!important;">
 					{{{ if ./unreplied }}}
 					<div class="ps-2 text-xs">
-						[[category:no_replies]]
+						[[category:no-replies]]
 					</div>
 					{{{ else }}}
 					{{{ if ./teaser.pid }}}
