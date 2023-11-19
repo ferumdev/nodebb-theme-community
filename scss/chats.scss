@@ -36,7 +36,7 @@ body.page-user-chats {
 
 [component="chat/recent"] {
 	.active .chat-room-btn {
-		background-color:  var(--btn-ghost-hover-color);
+		background-color: var(--btn-ghost-hover-color);
 	}
 }
 
@@ -61,38 +61,33 @@ body.page-user-chats {
 
 .expanded-chat {
 	.chat-content {
-		@include fix-lists;
+		.message-body {
+			@include fix-lists;
+		}
 
 		.chat-message {
-			.message-body-wrapper .controls {
-				[data-action="restore"], [data-action="unpin"] {
-					display: none;
+			.message-body-wrapper {
+				.controls {
+					opacity: 0;
+					transition: $transition-fade;
+					&:has([aria-expanded="true"]) { opacity: 1; }
+					[data-action="restore"], [data-action="unpin"] { display: none; }
+				}
+				&:hover {
+					.controls { opacity: 1;	}
 				}
 			}
-		}
-		.chat-message.deleted {
-			.message-body-wrapper .controls {
-				[data-action] {
-					display: none;
-				}
-
-				[data-action="restore"] {
-					display: inline;
+			&.deleted {
+				.message-body { opacity: 0.3; }
+				.message-body-wrapper .controls {
+					[data-action] { display: none; }
+					[data-action="restore"] { display: block; }
 				}
 			}
-
-			.message-body {
-				opacity: 0.3;
-			}
-		}
-		.chat-message.pinned {
-			.message-body-wrapper .controls {
-				[data-action="pin"] {
-					display: none;
-				}
-
-				[data-action="unpin"] {
-					display: inline;
+			&.pinned {
+				.message-body-wrapper .controls {
+					[data-action="pin"] { display: none; }
+					[data-action="unpin"] { display: block;}
 				}
 			}
 		}

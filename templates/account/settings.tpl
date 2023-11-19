@@ -95,7 +95,7 @@
 				<label class="form-check-label">[[user:paginate-description]]</label>
 			</div>
 			<div class="mb-2">
-				<label class="form-label">[[user:topics_per_page]] ([[user:max-items-per-page, {maxTopicsPerPage}]])</label>
+				<label class="form-label">[[user:topics-per-page]] ([[user:max-items-per-page, {maxTopicsPerPage}]])</label>
 				<input type="text" class="form-control form-control-sm" data-property="topicsPerPage" value="{settings.topicsPerPage}">
 			</div>
 			<div class="">
@@ -190,9 +190,9 @@
 			<div class="mb-2">
 				<label class="form-label">[[user:default-category-watch-state]]</label>
 				<select class="form-select form-select-sm" data-property="categoryWatchState">
-					<option value="notification" {{{ if ./notification }}}selected{{{ end }}}>[[notifications:notification-only]]</option>
-						<option value="email" {{{ if ./email }}}selected{{{ end }}}>[[notifications:email-only]]</option>
-						<option value="notificationemail" {{{ if ./notificationemail }}}selected{{{ end }}}>[[notifications:notification-and-email]]</option>
+					<option value="tracking" {{{ if categoryWatchState.tracking }}}selected{{{ end }}}>[[category:tracking]]</option>
+					<option value="notwatching" {{{ if categoryWatchState.notwatching }}}selected{{{ end }}}>[[category:not-watching]]</option>
+					<option value="ignoring" {{{ if categoryWatchState.ignoring }}}selected{{{ end }}}>[[category:ignoring]]</option>
 				</select>
 			</div>
 		</div>
@@ -208,9 +208,9 @@
 				<div class="mb-2 col-5">
 					<select class="form-select form-select-sm" data-property="{./name}">
 						<option value="none" {{{ if ./none }}}selected{{{ end }}}>[[notifications:none]]</option>
-						<option value="notification" {{{ if ./notification }}}selected{{{ end }}}>[[notifications:notification_only]]</option>
-						<option value="email" {{{ if ./email }}}selected{{{ end }}}>[[notifications:email_only]]</option>
-						<option value="notificationemail" {{{ if ./notificationemail }}}selected{{{ end }}}>[[notifications:notification_and_email]]</option>
+						<option value="notification" {{{ if ./notification }}}selected{{{ end }}}>[[notifications:notification-only]]</option>
+						<option value="email" {{{ if ./email }}}selected{{{ end }}}>[[notifications:email-only]]</option>
+						<option value="notificationemail" {{{ if ./notificationemail }}}selected{{{ end }}}>[[notifications:notification-and-email]]</option>
 					</select>
 				</div>
 			</div>
